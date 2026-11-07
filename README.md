@@ -16,12 +16,14 @@ Department of Computer Science and Engineering
 | Project Title | CourseLens: AI-Powered Academic Coursework & Team Contribution Tracking System |
 | Team Leader | Md Shahajalal Mahmud |
 
-| No. | Name | Student ID | Role |
-|---|---|---|---|
-| 1 | Md Shahajalal Mahmud | 11230321539 | Team Leader & AI Integration Lead |
-| 2 | Preota Saha | 11230321538 | Frontend Developer |
-| 3 | Md Munna Sardar | 11230321540 | Database Manager |
-| 4 | Hazera Islam Mim | 11230321542 | Backend Developer |
+
+
+| No. | Name                 | Student ID  | Role                              | GitHub Profile URL                                                             |
+| --- | -------------------- | ----------- | --------------------------------- | ------------------------------------------------------------------------------ |
+| 1   | Md Shahajalal Mahmud | 11230321539 | Team Leader & AI Integration Lead | [shahjalal-mahmud](https://github.com/shahjalal-mahmud?utm_source=chatgpt.com) |
+| 2   | Preota Saha          | 11230321538 | Frontend Developer                | [Preota-Saha](https://github.com/Preota-Saha?utm_source=chatgpt.com)           |
+| 3   | Md Munna Sardar      | 11230321540 | Database Manager                  | [Mdmunnasardar](https://github.com/Mdmunnasardar?utm_source=chatgpt.com)       |
+| 4   | Hazera Islam Mim     | 11230321542 | Backend Developer                 | [hazeramim](https://github.com/hazeramim?utm_source=chatgpt.com)               |
 
 ---
 
