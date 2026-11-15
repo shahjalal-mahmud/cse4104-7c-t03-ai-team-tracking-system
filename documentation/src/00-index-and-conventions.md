@@ -1,7 +1,7 @@
 # CourseLens – Documentation Index and Conventions
 
 | Field                | Value                                                                                            |
-|----------------------|--------------------------------------------------------------------------------------------------|
+| -------------------- | ------------------------------------------------------------------------------------------------ |
 | Project              | CourseLens: AI-Powered Academic Coursework & Team Contribution Tracking System                   |
 | Team                 | CSE4104-7C-T03 (Section 7C)                                                                      |
 | Document set version | 1.2-DRAFT (not locked)                                                                           |
@@ -18,20 +18,20 @@ Each document is self-contained: it repeats the rules it needs and does not poin
 
 ## 2. Document set
 
-| File                                       | Contents                                                              | Use it when                                |
-|--------------------------------------------|-----------------------------------------------------------------------|--------------------------------------------|
-| `00-index-and-conventions.md`              | This file: scope, phases, conventions, rules for AI                   | Always paste first                         |
-| `01-business-rules.md`                     | Every rule the system enforces (BR-xx) and the numeric limits         | Writing validation and service logic       |
-| `02-functional-requirements.md`            | What the system does (FR-xx), by module                               | Planning any feature                       |
-| `03-non-functional-requirements.md`        | Quality targets (NFR-xx)                                              | Security, performance, UX decisions        |
-| `04-roles-and-permissions.md`              | Roles, token claims, guards, permission and visibility matrix         | Writing auth middleware and access checks  |
-| `05-use-cases.md`                          | Step-by-step user flows (UC-xx)                                       | Writing controllers, services and UI flows |
-| `06-data-model.md`                         | ERD, tables, columns, keys, relations, enumerations                   | Writing migrations and models              |
-| `07-api-specification.md`                  | Every endpoint, request, response and error code                      | Writing routes, controllers, API client    |
-| `08-architecture-and-project-structure.md` | Stack versions, folder structure, layering, env vars, deployment      | Project setup, any new file                |
-| `09-ai-integration-spec.md`                | Exact AI input, commit references, output schema, prompt              | Writing the AI review feature              |
-| `10-ui-routes-and-text.md`                 | Frontend routes, fixed UI texts, status labels                        | Writing any frontend page                  |
-| `11-build-plan.md`                         | Ordered build steps and what each step contains                       | Starting any new piece of work             |
+| File                                       | Contents                                                         | Use it when                                |
+| ------------------------------------------ | ---------------------------------------------------------------- | ------------------------------------------ |
+| `00-index-and-conventions.md`              | This file: scope, phases, conventions, rules for AI              | Always paste first                         |
+| `01-business-rules.md`                     | Every rule the system enforces (BR-xx) and the numeric limits    | Writing validation and service logic       |
+| `02-functional-requirements.md`            | What the system does (FR-xx), by module                          | Planning any feature                       |
+| `03-non-functional-requirements.md`        | Quality targets (NFR-xx)                                         | Security, performance, UX decisions        |
+| `04-roles-and-permissions.md`              | Roles, token claims, guards, permission and visibility matrix    | Writing auth middleware and access checks  |
+| `05-use-cases.md`                          | Step-by-step user flows (UC-xx)                                  | Writing controllers, services and UI flows |
+| `06-data-model.md`                         | ERD, tables, columns, keys, relations, enumerations              | Writing migrations and models              |
+| `07-api-specification.md`                  | Every endpoint, request, response and error code                 | Writing routes, controllers, API client    |
+| `08-architecture-and-project-structure.md` | Stack versions, folder structure, layering, env vars, deployment | Project setup, any new file                |
+| `09-ai-integration-spec.md`                | Exact AI input, commit references, output schema, prompt         | Writing the AI review feature              |
+| `10-ui-routes-and-text.md`                 | Frontend routes, fixed UI texts, status labels                   | Writing any frontend page                  |
+| `11-build-plan.md`                         | Ordered build steps and what each step contains                  | Starting any new piece of work             |
 
 ## 3. Precedence when two documents disagree
 
@@ -63,7 +63,7 @@ After the tie-break, fix the losing document so the conflict disappears.
 IDs are numbered serially inside their own file.
 
 | Prefix           | Meaning                    | Example    |
-|------------------|----------------------------|------------|
+| ---------------- | -------------------------- | ---------- |
 | `BR-nn`          | Business rule              | BR-13      |
 | `FR-<MODULE>-nn` | Functional requirement     | FR-GH-06   |
 | `NFR-<AREA>-nn`  | Non-functional requirement | NFR-SEC-03 |
@@ -74,7 +74,7 @@ Functional modules: `AUTH`, `TEAM`, `MIL`, `SUB`, `VAL`, `GH`, `AI`, `DASH`, `ST
 ### 4.3 Naming
 
 | Where                                   | Style                            | Example                                                 |
-|-----------------------------------------|----------------------------------|---------------------------------------------------------|
+| --------------------------------------- | -------------------------------- | ------------------------------------------------------- |
 | Database tables and columns             | `snake_case`, plural table names | `submissions.submitted_at`                              |
 | JSON keys in API requests and responses | `camelCase`                      | `submittedAt`                                           |
 | Enumeration values                      | lowercase `snake_case` strings   | `ai_reviewed`                                           |
@@ -105,7 +105,7 @@ All user-facing text is English. No internationalisation is built.
 ### 5.1 Phases
 
 | Phase                    | Contains                           |
-|--------------------------|------------------------------------|
+| ------------------------ | ---------------------------------- |
 | **Phase 1 – Core (MVP)** | All requirements tagged **Must**   |
 | **Phase 2 – Important**  | All requirements tagged **Should** |
 
@@ -131,24 +131,24 @@ Plagiarism detection; static code-quality analysis; running or testing student c
 
 ## 7. Glossary
 
-| Term            | Meaning                                                                                                    |
-|-----------------|------------------------------------------------------------------------------------------------------------|
-| Course offering | One run of the course (CSE4104, Fall 2026). Exactly one is active.                                         |
-| Instructor      | System administrator and grader. Database role `instructor`. Has read-only access to teams.                |
-| Student         | Database role `student`. Becomes a **Team Leader** when `team_members.is_leader = true`.                   |
-| Team Leader     | A contextual role, not a database role: the one student who leads a team. Leadership can be transferred.   |
-| Milestone       | Weekly deliverable defined by the instructor, with document requirements and a rubric.                     |
-| Submission      | One team's single response to one milestone. Stored only after all validation checks pass. Never edited.   |
-| Validation      | The blocking checks run inside the submit request before anything is stored.                               |
-| Sync            | One run that fetches commits from GitHub into the database.                                                |
-| Period          | The date range analysed for a milestone.                                                                   |
-| Counted commit  | A stored commit inside the period that is not excluded as a merge or bot commit.                           |
-| AI report       | One Gemini-generated review attached to a submission. Always an advisory draft, visible to Instructors.    |
-| AI flag         | A warning in an AI report that cites at least one existing commit as evidence.                             |
-| Commit ref      | Short reference such as `c17` that stands for one commit inside one AI request. Mapped back to a SHA.      |
-| Evidence        | Commit refs (stored as SHAs) that support an AI flag.                                                      |
-| Label           | Anonymous name such as `Member A` used in AI requests.                                                     |
-| Student status  | The reduced submission status that students and leaders see (`submitted` or `published`).                  |
+| Term            | Meaning                                                                                                  |
+| --------------- | -------------------------------------------------------------------------------------------------------- |
+| Course offering | One run of the course (CSE4104, Fall 2026). Exactly one is active.                                       |
+| Instructor      | System administrator and grader. Database role `instructor`. Has read-only access to teams.              |
+| Student         | Database role `student`. Becomes a **Team Leader** when `team_members.is_leader = true`.                 |
+| Team Leader     | A contextual role, not a database role: the one student who leads a team. Leadership can be transferred. |
+| Milestone       | Weekly deliverable defined by the instructor, with document requirements and a rubric.                   |
+| Submission      | One team's single response to one milestone. Stored only after all validation checks pass. Never edited. |
+| Validation      | The blocking checks run inside the submit request before anything is stored.                             |
+| Sync            | One run that fetches commits from GitHub into the database.                                              |
+| Period          | The date range analysed for a milestone.                                                                 |
+| Counted commit  | A stored commit inside the period that is not excluded as a merge or bot commit.                         |
+| AI report       | One Gemini-generated review attached to a submission. Always an advisory draft, visible to Instructors.  |
+| AI flag         | A warning in an AI report that cites at least one existing commit as evidence.                           |
+| Commit ref      | Short reference such as `c17` that stands for one commit inside one AI request. Mapped back to a SHA.    |
+| Evidence        | Commit refs (stored as SHAs) that support an AI flag.                                                    |
+| Label           | Anonymous name such as `Member A` used in AI requests.                                                   |
+| Student status  | The reduced submission status that students and leaders see (`submitted` or `published`).                |
 
 ## 8. How to lock the documents
 
