@@ -319,12 +319,12 @@ Deployment details will be documented here after the application is deployed.
 
 **Team name:** CSE4104-7C-T03 | **Section:** 7C | **Course:** CSE 4104 – Software Development III
 
-| Contributor          | Role                              | GitHub                                                  |
-| -------------------- | --------------------------------- | ------------------------------------------------------- |
-| Md Shahajalal Mahmud | Team Leader & AI Integration Lead | [shahjalal-mahmud](https://github.com/shahjalal-mahmud) |
-| Preota Saha          | Frontend Developer                | [Preota-Saha](https://github.com/Preota-Saha)           |
-| Md Munna Sardar      | Database Manager                  | [Mdmunnasardar](https://github.com/Mdmunnasardar)       |
-| Hazera Islam Mim     | Backend Developer                 | [hazeramim](https://github.com/hazeramim)               |
+| No. | Name                 | Student ID  | Role                              | GitHub Profile                                          |
+| --- | -------------------- | ----------- | --------------------------------- | ------------------------------------------------------- |
+| 1   | Md Shahajalal Mahmud | 11230321539 | Team Leader & AI Integration Lead | [shahjalal-mahmud](https://github.com/shahjalal-mahmud) |
+| 2   | Preota Saha          | 11230321538 | Frontend Developer                | [Preota-Saha](https://github.com/Preota-Saha)           |
+| 3   | Md Munna Sardar      | 11230321540 | Database Manager                  | [Mdmunnasardar](https://github.com/Mdmunnasardar)       |
+| 4   | Hazera Islam Mim     | 11230321542 | Backend Developer                 | [hazeramim](https://github.com/hazeramim)               |
 
 ---
 
